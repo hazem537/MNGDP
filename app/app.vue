@@ -13,8 +13,9 @@ useHead({
     dir: computed(() => locale.value === 'ar' ? 'rtl' : 'ltr')
   }
 })
-
-
+console.log(useColorMode().preference)
+useColorMode().preference = 'light'
+// useColorMode().setValue('light')
 console.log(locale.value)
 
 const title = 'Nuxt Starter Template'
