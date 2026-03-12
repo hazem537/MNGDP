@@ -18,6 +18,10 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+  colorMode:{
+    preference: "light",
+    fallback: "light",
+  },
   i18n: {
     locales: [
       {
