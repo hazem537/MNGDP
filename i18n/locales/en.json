@@ -1,0 +1,46 @@
+{
+  "stamp": {
+    "title": "A government website registered with the Digital Government Authority",
+    "verify": "How to verify?"
+  },
+  "header": {
+    "home": "Home",
+    "about": "About the Program",
+    "news": "Transformation News",
+    "capacity": "Capacity Building Center",
+    "digitalLibrary": "Digital Library",
+    "contactUs": "Contact Us",
+    "search": "Search"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "builtWith": "Built with"
+  },
+  "home": {
+    "hero": {
+      "title1": "Through development, strength is built",
+      "title2": "And with strength, excellence is achieved"
+    },
+    "about": {
+      "title": "About the Program",
+      "subtitle1": "Development is an extension of history,",
+      "subtitle2": "and a launch towards tomorrow",
+      "certificate": "Certified with",
+      "certificate2": "ISO 9001",
+      "more": "More about the Development Program",
+      "description1": "The story of the National Guard began with the vision of the founder, King Abdulaziz — may God rest his soul — who instilled in the nation’s sons the spirit of heroism and loyalty. From that spirit, the core of the National Guard emerged to become a symbol of determination and a guardian of the Kingdom’s security and unity. This core evolved through a journey of building and modernization, transforming from volunteer Mujahideen groups into a modern military institution that combines authenticity with progress, comprising integrated formations of forces and units specializing in defense, security, support, and logistics.",
+      "description2": "As the journey of modernization and development continued, a new phase was launched that reinforced and expanded this approach towards the future. The Development Program of the Ministry of National Guard represents a natural extension of the growth and modernization journey that has accompanied the ministry since its inception, as part of its diligent efforts to keep pace with the aspirations of Saudi Vision 2030 and achieve its targets. The issuance of the Royal Decree in the middle of 1440 AH to establish the program was a pivotal moment in this journey, followed by several Royal Decrees that outlined the new launch, starting with a comprehensive study for the ministry's development, the formation of a High Committee chaired by His Royal Highness the Crown Prince and Prime Minister, leading up to the approval of the program launch plan and adoption of the ministry’s strategic orientation to enhance its pioneering position and embody the ambitions of the coming phase.",
+      "vision": "A vision driven by national values opens horizons for tomorrow",
+      "visionDescription": "Leading the development process in the Ministry of National Guard by empowering its personnel to achieve the desired impact and benefits for the future of the Kingdom of Saudi Arabia.",
+      "message": "A mission that creates impact",
+      "messageDescription": "Institutional excellence and achieving sustainable development by investing in the development of the competencies of the Ministry of National Guard, as well as collaborating with many entities to realize development ambitions, in addition to improving and advancing investment in military capabilities to enhance rapid response to risks and emerging threats against the Kingdom and playing a pivotal role in supporting the security and defense systems of the Kingdom of Saudi Arabia."
+    },
+    "moral": {
+        "title": "Values",
+        "subtitle": "Values with solid principles that foster trust and excellence",
+        "value1": "Excellence",
+        "value2": "Teamwork",
+        "value3": "Empowerment"
+      }
+  }
+}
