@@ -4,10 +4,8 @@
         <AboutHeader />
         <AboutStrategicAxes />
         <AboutTransformationAspects />
-         <AboutOrganizationalStructure />
-        <HomeAmbitionsSection />
-        <HomeTransformMessageSection />
-        <HomeMostVisitedSection />
-        <HomeIsPageUseful />
+        <AboutOrganizationalStructure />
+        <AboutLastUpdate />
+        <AboutIsPageUseful />
     </div>
 </template>
