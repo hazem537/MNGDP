@@ -3,6 +3,9 @@
 
         <PageHeader :imageUrl="item.image" :alt="item.alt" :title="item.title" :description="item.description"
             :breadcrumbItems="breadcrumbItems" />
+        <VisualIdentityLogo />
+        <VisualIdentityFonts />
+        <VisualIdentityColors />
 
         <LastUpdate />
         <IsPageUseful />

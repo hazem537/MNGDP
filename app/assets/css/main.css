@@ -57,6 +57,35 @@
   font-display: swap;
 }
 
+
+@font-face {
+  font-family: "majallab";
+  src: url("~/assets/fonts/majallab/bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "georgia";
+  src: url("~/assets/fonts/georgia/bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bukra";
+  src: url("~/assets/fonts/29LTBukra/bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bukra";
+  src: url("~/assets/fonts/29LTBukra/regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 @theme {
   /* Primary colors */
   --color-primary-green: #40803D;
@@ -127,4 +156,11 @@ body{
     rgba(7, 77, 49, 0.75) 50%,
     rgba(7, 77, 49, 0) 100%
   );
+}
+
+.info-bage {
+  @apply bg-[#EFF8FF] border  border-[#B2DDFF] text-[#1849A9]
+}
+.warning-bage {
+  @apply text-[#93370D] border border-[#FEDF89]  bg-[#FFFAEB]
 }
