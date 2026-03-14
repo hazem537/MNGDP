@@ -42,7 +42,7 @@ defineProps<{
 }>()
 
 
-import latestNewsImage from '~/assets/images/latestnews/latestnews.jpg'
+import latestNewsImage from '~/assets/images/latestNews/latestnews.jpg'
 
 
 </script>
