@@ -67,7 +67,7 @@
 }
 @font-face {
   font-family: "georgia";
-  src: url("~/assets/fonts/Georgia/bold.ttf") format("truetype");
+  src: url("~/assets/fonts/Georgia/Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
