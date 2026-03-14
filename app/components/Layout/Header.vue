@@ -7,28 +7,49 @@
                     <AppLogo class="h-16 w-auto" />
                 </NuxtLink>
                 <nav class="hidden md:flex items-center gap-1 flex-1 justify-center">
-                    <NuxtLink v-for="link in simpleLinks" :key="link.to" :to="link.to"
-                        class="px-4 py-6 rounded text-sm font-medium text-gray-700 hover:text-[#1a2e44] hover:bg-gray-100 transition-colors whitespace-nowrap"
-                        active-class="!bg-secondary-green !text-white hover:!text-white relative"
+                    <NuxtLink
+                        v-for="link in links"
+                        :key="link.to"
+                        :to=" link.type === 'single' ? link.to : undefined"
+                        class="px-4 py-6 text-sm font-medium text-gray-700 hover:text-[#1a2e44] hover:bg-gray-100 rounded relative"
+                        :class="{
+                            'bg-secondary-green! text-white! hover:text-white!': isSectionActive(link.to)
+                        }"
                     >
-                        <template #default="{ isActive }">
+                        <template v-if="link.type === 'single'">
                             <span class="relative flex items-center justify-center w-full h-full">
-                                <span v-if="isActive" class="absolute left-1/2 -bottom-6 -translate-x-1/2 bg-primary-400 rounded w-full h-[5px] "></span>
+                                <span
+                                    v-if="isSectionActive(link.to)"
+                                    class="absolute left-1/2 -bottom-6 -translate-x-1/2 bg-primary-400 rounded w-full h-[5px] "
+                                ></span>
                                 <span class="relative z-10">
                                     {{ $t(link.labelKey) }}
                                 </span>
                             </span>
                         </template>
-                        <!-- {{ $t(link.labelKey) }} -->
+                        <template v-else>
+                            <UDropdownMenu :key="link.to" :items="link.children">
+                                <UButton
+                                    variant="ghost"
+                                    color="neutral"
+                                    size="sm"
+                                    class=" relative text-sm font-medium  hover:text-secondary-green   p-0 rounded"
+                                    :class="{
+                                        'bg-secondary-green! text-white! hover:text-white!': isSectionActive(link.to)
+                                    }"
+                                    trailing-icon="i-lucide-chevron-down"
+                                >
+                                    {{ t(link.labelKey) }}
+                                    <span
+                                    v-if="isSectionActive(link.to)"
+                                    class="absolute left-1/2 -bottom-6 -translate-x-1/2 bg-primary-400 rounded w-full h-[5px] "
+                                ></span>
+                                </UButton>
+                            </UDropdownMenu>
+                        </template>
                     </NuxtLink>
 
-                    <UDropdownMenu v-for="link in dropdownLinks" :key="link.to" :items="link.children">
-                        <UButton variant="ghost" color="neutral" size="sm"
-                            class="px-4 py-6 text-sm   font-medium text-gray-700 hover:text-[#1a2e44] hover:bg-gray-100 rounded"
-                            trailing-icon="i-lucide-chevron-down">
-                            {{ t(link.labelKey) }}
-                        </UButton>
-                    </UDropdownMenu>
+
                 </nav>
             </div>
 
@@ -54,6 +75,7 @@
 
 <script setup lang="ts">
 const { t, locale, setLocale } = useI18n()
+const route = useRoute()
 
 const isArabic = computed(() => locale.value === 'ar')
 
@@ -61,38 +83,42 @@ const toggleLocale = async () => {
     await setLocale(isArabic.value ? 'en' : 'ar')
 }
 
-const simpleLinks = [
-    { to: '/', labelKey: 'header.home' },
-    { to: '/about', labelKey: 'header.about' },
-    { to: '/capacity', labelKey: 'header.capacity' }
+const isSectionActive = (to: string) => {
+    const current = route.path.split('/')[1] || ''
+    const target = to.split('/')[1] || ''
+    return current === target
+}
+
+const links = [
+    { to: '/', labelKey: 'header.home', type: 'single' },
+    { to: '/about', labelKey: 'header.about', type: 'single' },
+    { to: '/transformation-news',  labelKey: 'header.news',type: 'dropdown',
+        children: [[
+            { label: 'نشرة لمحة عن التطور', to: '/transformation-news/development-overview' },
+            { label: 'الاخبار والمستجدات', to: '/transformation-news/latest-news' },
+            { label: 'هوية البرنامج', to: '/transformation-news/visual-identity' },
+
+        ]]
+    },
+    { to: '/capacity', labelKey: 'header.capacity', type: 'single' },
+
+    {
+        to: '/library',
+        labelKey: 'header.digitalLibrary',
+        type: 'dropdown',
+        children: [[
+            { label: t('header.digitalLibrary'), to: '/library' }
+        ]]
+    },
+    {
+        to: '/contact',
+        labelKey: 'header.contactUs',
+        type: 'dropdown',
+        children: [[
+            { label: t('header.contactUs'), to: '/contact' }
+        ]]
+    }
 ]
 
-const dropdownLinks = computed(() => {
-    // Make labels recompute when locale changes
-    locale.value
-
-    return [
-        {
-            to: '/news',
-            labelKey: 'header.news',
-            children: [[
-                { label: t('header.news'), to: '/news' }
-            ]]
-        },
-        {
-            to: '/library',
-            labelKey: 'header.digitalLibrary',
-            children: [[
-                { label: t('header.digitalLibrary'), to: '/library' }
-            ]]
-        },
-        {
-            to: '/contact',
-            labelKey: 'header.contactUs',
-            children: [[
-                { label: t('header.contactUs'), to: '/contact' }
-            ]]
-        }
-    ]
-})
+// simpleLinks & dropdownLinks no longer used
 </script>

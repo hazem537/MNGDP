@@ -17,8 +17,12 @@ export default defineNuxtConfig({
       path: "~/components/Layout",
       pathPrefix: false,
     },
+    {
+      path: "~/components/Global",
+      pathPrefix: false,
+    },
   ],
-  colorMode:{
+  colorMode: {
     preference: "light",
     fallback: "light",
   },

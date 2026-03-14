@@ -26,7 +26,7 @@ export default defineAppConfig({
             link: 'text-white/70 font-md'
           },
           false: {
-            link: '!text-white font-md'
+            link: 'text-white font-md'
           }
         },
         disabled: {
