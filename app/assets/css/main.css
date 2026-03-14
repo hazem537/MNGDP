@@ -74,14 +74,14 @@
 }
 @font-face {
   font-family: "bukra";
-  src: url("~/assets/fonts/29LTBukra/bold.otf") format("opentype");
+  src: url("~/assets/fonts/29LTBukra/Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "bukra";
-  src: url("~/assets/fonts/29LTBukra/regular.ttf") format("truetype");
+  src: url("~/assets/fonts/29LTBukra/Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
